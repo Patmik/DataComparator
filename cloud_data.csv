@@ -1,0 +1,6 @@
+id,name,country,sales,updated_at,region
+1,Alice,UK,1000,2025-10-01,EMEA
+2,Bob,DE,870,2025-10-02,EMEA
+3,Charlie,FR,920,2025-10-02,EMEA
+4,Diana,PL,1230,2025-10-03,EMEA
+6,Frank,IT,640,2025-10-05,EMEA

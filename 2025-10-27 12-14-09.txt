@@ -1,0 +1,25 @@
+SCHEMA DIFFERENCES 
+Missing columns in df1: [('region', 'string')] 
+Missing columns in df2: [] 
+Identical: False 
+
+ROW NUMBER DIFFERENCES 
+Number of rows in df1: 5 
+Number of rows in df2: 5 
+Difference: 0 
+
+VALUES DIFFERENCES 
++---+----------+------------+------------+---------------+
+|id |column    |value_in_df1|value_in_df2|difference_type|
++---+----------+------------+------------+---------------+
+|2  |sales     |850         |870         |changed        |
+|4  |country   |GB          |PL          |changed        |
+|5  |name      |Edward      |NULL        |removed        |
+|5  |country   |ES          |NULL        |removed        |
+|5  |sales     |760         |NULL        |removed        |
+|5  |updated_at|2025-10-04  |NULL        |removed        |
+|6  |name      |NULL        |Frank       |added          |
+|6  |country   |NULL        |IT          |added          |
+|6  |sales     |NULL        |640         |added          |
+|6  |updated_at|NULL        |2025-10-05  |added          |
++---+----------+------------+------------+---------------+

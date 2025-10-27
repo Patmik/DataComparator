@@ -1,0 +1,6 @@
+id,name,country,sales,updated_at
+1,Alice,UK,1000,2025-10-01
+2,Bob,DE,850,2025-10-02
+3,Charlie,FR,920,2025-10-02
+4,Diana,GB,1230,2025-10-03
+5,Edward,ES,760,2025-10-04

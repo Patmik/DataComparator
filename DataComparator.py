@@ -1,9 +1,14 @@
 import pyspark
-from pyspark.sql.functions import col
+from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 from pyspark.sql.functions import col, when
 from pyspark.sql import DataFrame
 from datetime import datetime
+import pandas as pd
+import os
+from pyspark.sql.functions import lit, array, explode, struct
+
+
 
 class DataComparator:
     def __init__(self, df1, df2, primary_key,spark):
@@ -44,7 +49,7 @@ class DataComparator:
         quantity_df2 = self.df2.count()
         return {'quantity_df1' : quantity_df1,
                 'quantity_df2' : quantity_df2,
-                'difference' : quantity_df1 - quantity_df1}
+                'difference' : quantity_df1 - quantity_df2}
     
     def _compare_values(self):
         common_cols = [c for c in self.df1.columns if c in self.df2.columns and c not in self.primary_key]
@@ -100,17 +105,17 @@ class DataComparator:
         value_difference = self._compare_values()._jdf.showString(self._compare_values().count(), int(False), False)
 
         message = (
-            "SCHEMA DIFFRENCES \n"
+            "SCHEMA DIFFERENCES \n"
             f"Missing columns in df1: {schema_difference['missing_in_df1']} \n"
             f"Missing columns in df2: {schema_difference['missing_in_df2']} \n"
             f"Identical: {schema_difference['identical']} \n"
             "\n"
-            "ROW NUMBER DIFFRENCES \n"
+            "ROW NUMBER DIFFERENCES \n"
             f"Number of rows in df1: {row_difference['quantity_df1']} \n"
             f"Number of rows in df2: {row_difference['quantity_df2']} \n"
             f"Difference: {row_difference['difference']} \n"
             "\n"
-            "VALUES DIFFRENCES \n"
+            "VALUES DIFFERENCES \n"
         )
         if logger == True:
             current_datetime = datetime.now().strftime("%Y-%m-%d %H-%M-%S")

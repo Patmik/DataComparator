@@ -28,7 +28,7 @@ https://www.youtube.com/watch?v=49yQ-bdj4Ww
 
 # DataComparator
 ## Description
-It is a class based on pyspark written in Python. You can use it to check the diffrences between two DataFrames:
+It is a class based on pyspark written in Python. You can use it to check the differences between two DataFrames:
  - Columns
  - Row counts
  - Values

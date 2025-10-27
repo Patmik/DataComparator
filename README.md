@@ -10,14 +10,11 @@
     - SPARK_HOME-> \spark
     - HADOOP_HOME -> \hadoop
     - SPARK_LOCAL_HOSTNAME -> localhost
-    ![alt text](image.png)
-    ![alt text](image-1.png)
-    To corensponding folders that we created in points 1-3
+    To corensponding folders that we have created in points 1-3
 5) For Python' system environment ('Path') edit it by adding there:
     - %JAVA_HOME%\bin 
     - %SPARK_HOME%\bin
     - %HADOOP_HOME5\bin
-    ![alt text](image-2.png)
 6) Check if everything is configured correctyly by going to cmd and doing commands:
     - java -version
     - shell-spark
